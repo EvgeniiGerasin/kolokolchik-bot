@@ -50,11 +50,12 @@
     - `username`
     - `telegram_id`
 - Таблица `Tasks` хранит данные задач и связана с таблицей `Users`
-  - `id`
-  - `title` заголовок
-  - `description` описание (необязательно)
-  - `deadline` дедлайн
-  - `author` автор задачи (`telegram_id` из таблицы `Users`)
-  - `executor`исполнитель (необязательно)
-  - `created_data`дата создания
-  - `completed` отметка о выполнении (по умолчанию `False`)
+  - Содержит поля
+    - `id`
+    - `title` заголовок
+    - `description` описание (необязательно)
+    - `deadline` дедлайн
+    - `author` автор задачи (`telegram_id` из таблицы `Users`)
+    - `executor`исполнитель (необязательно)
+    - `created_data`дата создания
+    - `completed` отметка о выполнении (по умолчанию `False`)
