@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import sqlite3
 
-# from bot import logger
+from main import logger
 
 
 class SqlManager:
@@ -13,9 +13,9 @@ class SqlManager:
 
     def close(self) -> None:
         """Закрывает соединение с базой данных."""
-        # logger.info('Close DB')
+        logger.info('Close DB')
         self.conn.close()
-    
+
     def check_table_exists(self, table_name: str) -> bool:
         """Проверяет существование таблицы в базе данных"""
         self.cursor.execute(f"SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}'")
@@ -41,7 +41,7 @@ class SqlManager:
             print("Таблица 'Users' успешно создана.")
         except sqlite3.Error as e:
             print(f"Ошибка при создании таблицы 'Users': {e}")
-    
+
     def create_tasks_table(self) -> None:
         """Создает таблицу Tasks, если она не существует."""
         sql_create_tasks_table = """
@@ -65,7 +65,6 @@ class SqlManager:
             print(f"Ошибка при создании таблицы 'Tasks': {e}")
 
 
-
 def main():
     db = SqlManager()
     # Проверяем, существует ли таблица
@@ -78,5 +77,7 @@ def main():
     else:
         print("Таблица 'issues' уже существует.")
     db.close()
+
+
 if __name__ == '__main__':
     main()
