@@ -1,7 +1,7 @@
 from datetime import datetime
 import sqlite3
 
-from .main import logger
+from logger import logger
 
 
 class SqlManager:
