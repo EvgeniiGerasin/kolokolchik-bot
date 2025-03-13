@@ -1,0 +1,9 @@
+{
+    "python.testing.pytestArgs": [
+        "bot",
+        "--import-mode=importlib",
+        "-v"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
